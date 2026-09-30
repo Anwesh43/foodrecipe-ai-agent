@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Detailed Soup Recipes</title>
+  <style>
+    :root{
+      --bg:#0b1220;
+      --card:#0f1b33;
+      --card2:#0c1730;
+      --text:#eaf0ff;
+      --muted:#b7c3e6;
+      --accent:#7c5cff;
+      --accent2:#27d3a2;
+      --border:rgba(255,255,255,.10);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      background: radial-gradient(1100px 700px at 15% 10%, rgba(124,92,255,.35), transparent 55%),
+                  radial-gradient(900px 600px at 95% 0%, rgba(39,211,162,.22), transparent 55%),
+                  radial-gradient(900px 600px at 60% 105%, rgba(255,168,76,.14), transparent 60%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.55;
+    }
+    header{
+      padding:42px 18px 18px;
+      max-width:1100px;
+      margin:0 auto;
+    }
+    .title{
+      display:flex;flex-wrap:wrap;gap:12px;align-items:baseline;justify-content:space-between;
+    }
+    h1{margin:0;font-size:clamp(24px, 3.4vw, 40px);letter-spacing:.2px}
+    .subtitle{margin:8px 0 0;color:var(--muted);max-width:70ch}
+    .badge-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+    .badge{border:1px solid var(--border);background:rgba(255,255,255,.04);padding:7px 10px;border-radius:999px;color:var(--muted);font-size:13px}
+
+    main{max-width:1100px;margin:0 auto;padding:10px 18px 52px;}
+    .grid{display:grid;gap:16px;grid-template-columns:repeat(12,1fr)}
+    .card{
+      grid-column:span 12;
+      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border:1px solid var(--border);
+      border-radius:18px;
+      overflow:hidden;
+      box-shadow: 0 18px 50px rgba(0,0,0,.35);
+    }
+    @media (min-width:900px){
+      .card{grid-column:span 6;}
+    }
+    .card-inner{display:grid;grid-template-columns:140px 1fr;gap:14px;padding:14px}
+    @media (min-width:520px){
+      .card-inner{grid-template-columns:200px 1fr;}
+    }
+    .thumb{
+      width:100%;height:100%;min-height:140px;
+      border-radius:14px;
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.05);
+      object-fit:cover;
+    }
+    .meta h2{margin:2px 0 4px;font-size:20px}
+    .pill-row{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0 0}
+    .pill{font-size:12px;color:var(--muted);border:1px solid var(--border);padding:5px 9px;border-radius:999px;background:rgba(0,0,0,.15)}
+    .pill.accent{color:#f1edff;border-color:rgba(124,92,255,.55);background:rgba(124,92,255,.12)}
+    .pill.green{color:#eafff7;border-color:rgba(39,211,162,.55);background:rgba(39,211,162,.10)}
+
+    .sections{display:grid;gap:14px;padding:0 14px 14px}
+    .section{
+      border:1px solid var(--border);
+      background:rgba(0,0,0,.12);
+      border-radius:14px;
+      padding:12px 12px;
+    }
+    .section h3{margin:0 0 8px;font-size:14px;letter-spacing:.4px;text-transform:uppercase;color:#d7defa}
+
+    ul.ingredients{margin:0;padding-left:18px;color:var(--text)}
+    ul.ingredients li{margin:4px 0;color:var(--text)}
+    .muted{color:var(--muted)}
+
+    .steps{margin:0;padding-left:18px}
+    .steps li{margin:6px 0;color:var(--text)}
+    .footer-links{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+    a.btn{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:9px 11px;border-radius:12px;
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.04);
+      color:var(--text);text-decoration:none;font-size:13px
+    }
+    a.btn:hover{border-color:rgba(124,92,255,.55);box-shadow:0 0 0 3px rgba(124,92,255,.12) inset}
+
+    .note{
+      margin-top:18px;
+      padding:12px 14px;
+      border:1px dashed rgba(255,255,255,.22);
+      border-radius:14px;
+      color:var(--muted);
+      background:rgba(255,255,255,.03);
+    }
+    .kicker{font-weight:600;color:#eaf0ff}
+    code.small{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;font-size:12px;color:#cfe0ff}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="title">
+      <h1>Detailed Soup Recipes (4)</h1>
+      <div class="badge-row">
+        <span class="badge">Includes ingredients + step-by-step</span>
+        <span class="badge">Great for weeknights & meal prep</span>
+      </div>
+    </div>
+    <p class="subtitle">Here are four hearty soups with clear ingredient lists and condensed cooking steps. You can copy this file and print it, or tell me what dietary preference you have (vegetarian, gluten-free, spicy) and I’ll tailor them.</p>
+  </header>
+
+  <main>
+    <div class="grid">
+
+      <!-- Creamy Tomato Soup -->
+      <article class="card">
+        <div class="card-inner">
+          <img class="thumb" src="https://www.themealdb.com/images/media/meals/stpuws1511191310.jpg" alt="Creamy Tomato Soup" />
+          <div class="meta">
+            <h2>Creamy Tomato Soup</h2>
+            <div class="muted">British • Starter</div>
+            <div class="pill-row">
+              <span class="pill accent">Smooth & creamy</span>
+              <span class="pill">Make-ahead friendly</span>
+              <span class="pill green">Freezer: up to 3 months</span>
+            </div>
+            <div class="footer-links">
+              <a class="btn" href="https://www.youtube.com/watch?v=lBhwjjUiFk4" target="_blank" rel="noopener">YouTube</a>
+              <a class="btn" href="https://www.bbcgoodfood.com/recipes/2604646/creamy-tomato-soup" target="_blank" rel="noopener">Source</a>
+            </div>
+          </div>
+        </div>
+        <div class="sections">
+          <section class="section">
+            <h3>Ingredients</h3>
+            <ul class="ingredients">
+              <li>Olive Oil — 3 tbsp</li>
+              <li>Onions — 2 chopped</li>
+              <li>Celery — 2 sticks</li>
+              <li>Carrots — 300g</li>
+              <li>Potatoes — 500g</li>
+              <li>Bay Leaf — 4</li>
+              <li>Tomato Puree — 5 tblsp</li>
+              <li>Sugar — 2 tblsp</li>
+              <li>White Vinegar — 2 tblsp</li>
+              <li>Chopped Tomatoes — 1½ kg</li>
+              <li>Passata — 500g</li>
+              <li>Vegetable Stock Cube — 3</li>
+              <li>Whole Milk — 400ml</li>
+            </ul>
+          </section>
+          <section class="section">
+            <h3>Steps (condensed)</h3>
+            <ol class="steps">
+              <li>Gently fry oil + onions, celery, carrots, potatoes, bay leaves until onions soften (10–15 min).</li>
+              <li>Stir in tomato purée, sugar, vinegar, chopped tomatoes, passata; crumble in stock cubes.</li>
+              <li>Add 1 litre boiling water; simmer covered ~15 min until potato is tender; remove bay leaves.</li>
+              <li>Blend until very smooth; season and adjust sweetness if needed.</li>
+              <li>Reheat gently and stir in milk (avoid boiling). Serve.</li>
+            </ol>
+          </section>
+        </div>
+      </article>
+
+      <!-- Rosol -->
+      <article class="card">
+        <div class="card-inner">
+          <img class="thumb" src="https://www.themealdb.com/images/media/meals/lx1kkj1593349302.jpg" alt="Rosol (Polish Chicken Soup)" />
+          <div class="meta">
+            <h2>Rosół (Polish Chicken Soup)</h2>
+            <div class="muted">Polish • Chicken</div>
+            <div class="pill-row">
+              <span class="pill accent">Clear broth</span>
+              <span class="pill">Comfort classic</span>
+              <span class="pill green">Great with noodles</span>
+            </div>
+            <div class="footer-links">
+              <a class="btn" href="https://www.youtube.com/watch?v=AU60fxyxXGw" target="_blank" rel="noopener">YouTube</a>
+              <a class="btn" href="https://polishhousewife.com/rosol-polish-chicken-soup/" target="_blank" rel="noopener">Source</a>
+            </div>
+          </div>
+        </div>
+        <div class="sections">
+          <section class="section">
+            <h3>Ingredients</h3>
+            <ul class="ingredients">
+              <li>Chicken Legs — 4 (chopped)</li>
+              <li>Onions — 2 large</li>
+              <li>Carrots — 5 (chopped)</li>
+              <li>Leek — 1 (chopped)</li>
+              <li>Celery — 1 small</li>
+              <li>Cabbage — 1/4</li>
+              <li>Cloves — 1 whole</li>
+              <li>Allspice — 1 tsp</li>
+              <li>Bay Leaf — 2</li>
+              <li>Parsley — 4 sprigs</li>
+              <li>Dill — 4 sprigs</li>
+              <li>Pepper — 1 tsp</li>
+              <li>Salt — 1 tbsp</li>
+            </ul>
+          </section>
+          <section class="section">
+            <h3>Steps (condensed)</h3>
+            <ol class="steps">
+              <li>Add chicken to a stock pot, cover with water, bring to a boil; simmer 2–2.5 hours, skimming for a clear broth.</li>
+              <li>Add vegetables + spices for the last hour (or cook separately if pot is small).</li>
+              <li>Strain broth; pick chicken meat from bones; slice carrots.</li>
+              <li>Return chicken and carrots to broth; season as needed.</li>
+              <li>Cook noodles separately; add to bowl and ladle soup over.</li>
+            </ol>
+          </section>
+        </div>
+      </article>
+
+      <!-- French Onion Soup -->
+      <article class="card">
+        <div class="card-inner">
+          <img class="thumb" src="https://www.themealdb.com/images/media/meals/xvrrux1511783685.jpg" alt="French Onion Soup" />
+          <div class="meta">
+            <h2>French Onion Soup</h2>
+            <div class="muted">French • Side</div>
+            <div class="pill-row">
+              <span class="pill accent">Caramelized onions</span>
+              <span class="pill">Cheesy toast topping</span>
+              <span class="pill green">Dinner-party friendly</span>
+            </div>
+            <div class="footer-links">
+              <a class="btn" href="https://www.youtube.com/watch?v=-DLDMQucqDI" target="_blank" rel="noopener">YouTube</a>
+              <a class="btn" href="https://www.bbcgoodfood.com/recipes/3020694/french-onion-soup" target="_blank" rel="noopener">Source</a>
+            </div>
+          </div>
+        </div>
+        <div class="sections">
+          <section class="section">
+            <h3>Ingredients</h3>
+            <ul class="ingredients">
+              <li>Butter — 50g</li>
+              <li>Olive Oil — 1 tbsp</li>
+              <li>Onion — 1 kg</li>
+              <li>Sugar — 1 tsp</li>
+              <li>Garlic Clove — 4 (sliced)</li>
+              <li>Plain Flour — 2 tbsp</li>
+              <li>Dry White Wine — 250ml</li>
+              <li>Beef Stock — 1L</li>
+              <li>Bread — 4 slices</li>
+              <li>Gruyère — 140g</li>
+            </ul>
+          </section>
+          <section class="section">
+            <h3>Steps (condensed)</h3>
+            <ol class="steps">
+              <li>Melt butter + oil; cook onions covered 10 min until soft.</li>
+              <li>Add sugar; cook 20 min more, stirring, until deeply caramelized; add garlic last few minutes.</li>
+              <li>Stir in flour; gradually add wine then hot stock. Simmer covered 15–20 min.</li>
+              <li>Toast bread; ladle soup into bowls; top with toast + Gruyère; grill until melted.</li>
+            </ol>
+          </section>
+        </div>
+      </article>
+
+      <!-- Black Bean Soup -->
+      <article class="card">
+        <div class="card-inner">
+          <img class="thumb" src="https://www.themealdb.com/images/media/meals/x0mreq1784577446.jpg" alt="Black Bean soup" />
+          <div class="meta">
+            <h2>Black Bean Soup</h2>
+            <div class="muted">Cuban-inspired • Starter</div>
+            <div class="pill-row">
+              <span class="pill accent">15–20 min simmer</span>
+              <span class="pill">Blend to your texture</span>
+              <span class="pill green">Toppings make it pop</span>
+            </div>
+            <div class="footer-links">
+              <a class="btn" href="https://www.delish.com/cooking/recipe-ideas/a55504/easy-black-bean-soup-recipe/" target="_blank" rel="noopener">Source</a>
+            </div>
+          </div>
+        </div>
+        <div class="sections">
+          <section class="section">
+            <h3>Ingredients</h3>
+            <ul class="ingredients">
+              <li>Extra Virgin Olive Oil — 2 tbsp</li>
+              <li>Red Onions — 1 medium</li>
+              <li>Jalapeno — 1</li>
+              <li>Garlic — 2 cloves (minced)</li>
+              <li>Tomato Puree — 1 tbsp</li>
+              <li>Kosher Salt — pinch</li>
+              <li>Black Pepper — pinch</li>
+              <li>Ground Cumin — 1/2 tsp</li>
+              <li>Chilli Powder — 1 tsp</li>
+              <li>Black Beans — 3 cans</li>
+              <li>Chicken Stock — 3 cups</li>
+              <li>Bay Leaf — 1</li>
+              <li>Sour Cream — garnish</li>
+              <li>Avocado — garnish</li>
+              <li>Cilantro — garnish</li>
+              <li>Lime — to serve</li>
+            </ul>
+          </section>
+          <section class="section">
+            <h3>Steps (condensed)</h3>
+            <ol class="steps">
+              <li>Sauté onion in oil until soft (~5 min). Add jalapeño + garlic; cook 2 min.</li>
+              <li>Stir in tomato paste; season with salt, pepper, cumin, chili powder.</li>
+              <li>Add beans + broth + bay leaf; bring to boil, then simmer 15–20 min to thicken (add broth to thin).</li>
+              <li>Remove bay leaf; blend partially or fully to desired texture.</li>
+              <li>Serve with sour cream, avocado, cilantro, and lime.</li>
+            </ol>
+          </section>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="note">
+      <div class="kicker">Want more soups?</div>
+      Tell me what you like (e.g., <code class="small">vegetarian</code>, <code class="small">high-protein</code>, <code class="small">spicy</code>, <code class="small">low-carb</code>) and how many servings you need—I’ll generate another set with a shopping list.
+    </div>
+
+  </main>
+</body>
+</html>
